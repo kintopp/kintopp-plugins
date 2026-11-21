@@ -78,6 +78,9 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
      item on one line. ChatGPT's skill page keeps line breaks inside a paragraph, so a
      wrapped SKILL.md shows as broken lines. Unwrap an existing skill, and add a test
      that fails on a wrapped paragraph.
+   - **Don't invite users to edit the plugin's skill.** An update is expected to replace
+     the installed copy, edits included (inferred: install caches are keyed by version). Users who want their own instructions add a second skill or
+     put them in their project's instructions; the README can say so.
 6. **Correct the repo's docs** that the change makes false: CLAUDE.md lines about
    `plugin/` or about versioning, release steps, and the README's install section. Then add
    the plugin route to the README, following `platforms.md`.
