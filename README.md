@@ -22,6 +22,7 @@ Keep the two files in step: same marketplace `name`, same plugin names and sourc
 - **Claude Code:** `claude plugin marketplace add kintopp/kintopp-plugins`, then
   `claude plugin install odeuropa-eokg@kintopp-plugins`.
 - **ChatGPT desktop app:** Plugins → Add plugin marketplace, enter `kintopp/kintopp-plugins` as the Source and leave
-  Git ref and Sparse paths empty. Then install from the plugin browser. This works on free accounts too. ChatGPT on the web (chatgpt.com) can't add a
+  Git ref and Sparse paths empty. Then install from the plugin browser. This works on free accounts too, but the plugin runs only in Codex mode,
+  not in ordinary ChatGPT chats. ChatGPT on the web (chatgpt.com) can't add a
   marketplace.
 - **Codex CLI:** `codex plugin marketplace add kintopp/kintopp-plugins`.
