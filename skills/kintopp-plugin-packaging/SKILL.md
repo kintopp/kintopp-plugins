@@ -74,6 +74,10 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
 5. **Fix the skill where the plugin route makes it wrong.** A `compatibility` line that
    asks for a local database or stdio is false for a hosted connector. Fix that in the
    source skill.
+   - **No hard-wrapped Markdown** in the skill folder: put each paragraph and each list
+     item on one line. ChatGPT's skill page keeps line breaks inside a paragraph, so a
+     wrapped SKILL.md shows as broken lines. Unwrap an existing skill, and add a test
+     that fails on a wrapped paragraph.
 6. **Correct the repo's docs** that the change makes false: CLAUDE.md lines about
    `plugin/` or about versioning, release steps, and the README's install section. Then add
    the plugin route to the README, following `platforms.md`.

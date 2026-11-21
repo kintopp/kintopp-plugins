@@ -141,6 +141,11 @@ interface:
 Claude ignores this file. Make sure the repo's skill bundler (`.skill` zip) and its tests
 accept the extra file.
 
+ChatGPT's skill page shows `display_name` as the title and `short_description` under it,
+then the SKILL.md body. So write `short_description` for the person reading that page, and
+agree both with the user. The skill's display name may differ from the plugin's (skkg
+uses "SKKG" for the skill, "SKKG Collection" for the plugin).
+
 ## Catalog entries in kintopp-plugins
 
 `.claude-plugin/marketplace.json`, appended to `plugins`:
@@ -208,8 +213,10 @@ These mirror `test/skill.test.js` in odeuropa-eokg-mcp:
 3. `.mcp.json` is `{ "<Key>": { "type": "http", "url": <url> } }` and `mcp.json` is the
    same with `streamable-http`, compared with `deepEqual` so that extra keys fail.
 4. The plugin folder has no `bin/`.
-5. `agents/openai.yaml` sets `display_name`, and the display name is the same in both
-   manifests and in `openai.yaml`. The two catalog entries live in another repo, so check
-   their display name by hand.
+5. Both manifests carry the plugin's display name, and `agents/openai.yaml` sets the
+   skill's `display_name`, each spelled out in the test. The two catalog entries live in
+   another repo, so check their display name by hand.
+6. Every paragraph of the skill's Markdown is one line (lists and tables excepted),
+   because ChatGPT shows a wrapped paragraph as broken lines.
 
 Each failure message names the fix (`run npm run build:skill and commit the result`).

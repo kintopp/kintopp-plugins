@@ -39,6 +39,7 @@ That is a different mechanism: it depends on the plan and gives the tools withou
 | Plugin | `displayName` in the manifest | Before install: only the fields in the **marketplace entry** (`displayName`, `description`, `author`, `homepage`, `interface`) for a plugin hosted in another repo; after install: the manifest | verified 2026-11-21 |
 | Connector | The server key, as written | The server key with its first letter capitalised; no display field exists; keys match `^[a-zA-Z0-9_:@/.-]+$` | verified 2026-11-21 |
 | Skill | The skill's `name` (kebab-case) | `agents/openai.yaml` `interface.display_name`, otherwise the name title-cased ("Odeuropa Eokg") | verified 2026-11-21 |
+| Skill page | Not checked | `display_name`, then `short_description`, then the SKILL.md body, with line breaks inside a paragraph kept as breaks | ChatGPT: verified 2026-11-21, desktop app |
 
 The marketplace's `name` field and the repo name are both `kintopp-plugins` so that the
 two platforms show the same label. Don't rename either one alone.
