@@ -17,8 +17,8 @@ Keep the two files in step: same marketplace `name`, same plugin names and sourc
 
 ## Add the marketplace
 
-- **claude.ai or Claude Desktop:** Customize → Plugins → Add → Add marketplace, enter `kintopp/kintopp-plugins`,. Then add each plugin and connect its connector
-  on the plugin's Connectors tab.
+- **claude.ai or Claude Desktop:** Customize → Plugins → Add → Add marketplace, enter `kintopp/kintopp-plugins`, then add each plugin
+  and connect its connector on the plugin's Connectors tab.
 - **Claude Code:** `claude plugin marketplace add kintopp/kintopp-plugins`, then
   `claude plugin install odeuropa-eokg@kintopp-plugins`.
 - **ChatGPT desktop app:** Plugins → Add plugin marketplace, enter `kintopp/kintopp-plugins` as the Source and leave
