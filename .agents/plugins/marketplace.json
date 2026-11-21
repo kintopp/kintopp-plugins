@@ -1,0 +1,22 @@
+{
+  "name": "kintopp-demo-plugins",
+  "interface": {
+    "displayName": "Kintopp Demo Plugins"
+  },
+  "plugins": [
+    {
+      "name": "odeuropa-eokg",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/kintopp/odeuropa-eokg-mcp.git",
+        "path": "./plugin/odeuropa-eokg",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
