@@ -22,5 +22,6 @@ Keep the two files in step: same marketplace `name`, same plugin names and sourc
   on the plugin's Connectors tab.
 - **Claude Code:** `claude plugin marketplace add kintopp/mcp-plugins`, then
   `claude plugin install odeuropa-eokg@kintopp-demo-plugins`.
-- **ChatGPT desktop app and Codex:** `codex plugin marketplace add kintopp/mcp-plugins`, then install from the
-  plugin browser.
+- **ChatGPT desktop app:** Plugins → Add plugin marketplace, enter `kintopp/mcp-plugins` as the Source and leave
+  Git ref and Sparse paths empty. Then install from the plugin browser.
+- **Codex CLI:** `codex plugin marketplace add kintopp/mcp-plugins`.
