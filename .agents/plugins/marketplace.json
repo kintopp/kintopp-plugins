@@ -84,6 +84,33 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "rijksmuseum",
+      "displayName": "Rijksmuseum MCP+",
+      "description": "Search the Rijksmuseum's collection of Dutch art, crafts and history by metadata, iconography and provenance, by meaning, by describing what an image shows, or by similarity to another work, and view high-resolution images. Includes a research guidance skill.",
+      "author": {
+        "name": "University of Basel",
+        "url": "https://rise.unibas.ch/en/"
+      },
+      "homepage": "https://github.com/kintopp/rijksmuseum-mcp-plus",
+      "interface": {
+        "displayName": "Rijksmuseum MCP+",
+        "shortDescription": "Search the Rijksmuseum collection: art, provenance and images",
+        "developerName": "University of Basel",
+        "websiteURL": "https://github.com/kintopp/rijksmuseum-mcp-plus"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/kintopp/rijksmuseum-mcp-plus.git",
+        "path": "./plugin/rijksmuseum",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }
