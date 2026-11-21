@@ -51,6 +51,9 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
    - **Description:** one or two sentences on what the user gets (the collection, the
      period, and "with a research guidance skill" only if the skill gives real guidance).
      The same text goes in both manifests and both catalog entries.
+   - **Icon (optional):** whether the plugin gets one, and which image. See
+     `references/files.md` § Icon. Don't use an institution's logo or branding without
+     its permission: the servers are independent of the collections they serve.
 3. **Write the plugin folder** from `references/files.md`:
    - two manifests;
    - two MCP configs with the same key and URL;

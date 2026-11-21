@@ -67,7 +67,8 @@ iconclass and globalise scripts have a `--check` mode; odeuropa checks drift in
   - Delete `.codex-plugin/` and `headers`.
   - Use `package.json`'s version.
   - Drop the personal email from `author`.
-  - Leave the icon out for now (see `files.md`).
+  - The leftover `assets/icon.svg` (a plain museum glyph, not SKKG's logo) can be
+    reused as the icon, if the user agrees (see `files.md` § Icon).
   - Ask the user about the plugin name (`skkg-collection` or something else) and the key.
     The existing claude.ai connector is called "SKKG Sammlung".
 - The skill's `compatibility` line asks for a local database file (`SKKG_DB_PATH`). That

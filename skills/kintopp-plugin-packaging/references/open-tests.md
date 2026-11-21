@@ -47,3 +47,15 @@ a plugin?
 
 Does a connector added through ChatGPT's custom-connector route also appear in Codex mode,
 and is that route open to free accounts?
+
+## 6. Plugin icon
+
+Does the icon from `files.md` § Icon show up?
+
+- **Claude:** on the plugin's page and in the marketplace list in claude.ai and Desktop.
+  The docs say only Anthropic's directory reads `icon`, so "no" is the expected answer.
+- **ChatGPT desktop:** in the plugin browser before install, on the plugin page after
+  install, and in the composer (`composerIcon`).
+- **Record:** where it appears and where it doesn't, with the date and app version. If
+  ChatGPT shows nothing before install, try whether an `interface.logo` on the marketplace
+  entry is read, and what its path is relative to.
