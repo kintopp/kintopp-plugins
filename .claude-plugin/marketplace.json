@@ -1,9 +1,9 @@
 {
-  "name": "kintopp-demo-plugins",
+  "name": "kintopp-plugins",
   "owner": {
     "name": "Arno Bosse"
   },
-  "description": "Kintopp Demo Plugins: MCP connectors and research skills for cultural heritage data",
+  "description": "Kintopp Plugins: MCP connectors and research skills for cultural heritage data",
   "plugins": [
     {
       "name": "odeuropa-eokg",
