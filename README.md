@@ -13,6 +13,8 @@ own public repository; this repository only lists them.
 - `.claude-plugin/marketplace.json`: the catalog Claude reads.
 - `.agents/plugins/marketplace.json`: the same catalog in the format ChatGPT and Codex read.
 
+- `skills/kintopp-plugin-packaging/`: a skill for coding agents that package a server repo as a plugin here. It is not a plugin and isn't listed in either catalog.
+
 Keep the two files in step: same marketplace `name`, same plugin names and sources.
 
 ## Add the marketplace
