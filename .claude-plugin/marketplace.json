@@ -38,6 +38,23 @@
         "path": "plugin/skkg",
         "ref": "main"
       }
+    },
+    {
+      "name": "rijksmuseum-iconclass",
+      "displayName": "Rijksmuseum Iconclass",
+      "description": "Search and browse the Iconclass art-subject classification: about 1.3 million notations in 13 languages, with keyword and semantic search and Rijksmuseum artwork counts, plus a research guidance skill.",
+      "author": {
+        "name": "University of Basel",
+        "url": "https://rise.unibas.ch/en/"
+      },
+      "homepage": "https://github.com/kintopp/rijksmuseum-iconclass-mcp",
+      "category": "research",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/kintopp/rijksmuseum-iconclass-mcp.git",
+        "path": "plugin/rijksmuseum-iconclass",
+        "ref": "main"
+      }
     }
   ]
 }
