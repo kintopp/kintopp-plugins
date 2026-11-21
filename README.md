@@ -18,9 +18,10 @@ Keep the two files in step: same marketplace `name`, same plugin names and sourc
 ## Add the marketplace
 
 - **claude.ai or Claude Desktop:** Customize → Plugins → Add → Add marketplace, enter `kintopp/kintopp-plugins`, then add each plugin
-  and connect its connector on the plugin's Connectors tab.
+  and connect its connector on the plugin's Connectors tab. This works on free accounts too.
 - **Claude Code:** `claude plugin marketplace add kintopp/kintopp-plugins`, then
   `claude plugin install odeuropa-eokg@kintopp-plugins`.
 - **ChatGPT desktop app:** Plugins → Add plugin marketplace, enter `kintopp/kintopp-plugins` as the Source and leave
-  Git ref and Sparse paths empty. Then install from the plugin browser.
+  Git ref and Sparse paths empty. Then install from the plugin browser. ChatGPT on the web (chatgpt.com) can't add a
+  marketplace.
 - **Codex CLI:** `codex plugin marketplace add kintopp/kintopp-plugins`.
