@@ -21,6 +21,23 @@
         "path": "plugin/odeuropa-eokg",
         "ref": "main"
       }
+    },
+    {
+      "name": "skkg",
+      "displayName": "SKKG Collection",
+      "description": "Search the collection of the Stiftung für Kunst, Kultur und Geschichte (SKKG, Winterthur): about 64,000 objects with German metadata, provenance, acquisitions, literature, exhibitions and images.",
+      "author": {
+        "name": "University of Basel",
+        "url": "https://rise.unibas.ch/en/"
+      },
+      "homepage": "https://github.com/kintopp/skkg-mcp",
+      "category": "research",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/kintopp/skkg-mcp.git",
+        "path": "plugin/skkg",
+        "ref": "main"
+      }
     }
   ]
 }
