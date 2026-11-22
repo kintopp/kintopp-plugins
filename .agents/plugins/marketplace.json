@@ -9,14 +9,14 @@
       "displayName": "Odeuropa EOKG",
       "description": "Search the European Olfactory Knowledge Graph (Odeuropa): about 2.4 million smell references from European texts and artworks, mostly 1600–1920, with a research guidance skill.",
       "author": {
-        "name": "University of Basel",
-        "url": "https://rise.unibas.ch/en/"
+        "name": "RISE (University of Basel)",
+        "url": "https://rise.unibas.ch"
       },
       "homepage": "https://github.com/kintopp/odeuropa-eokg-mcp",
       "interface": {
         "displayName": "Odeuropa EOKG",
         "shortDescription": "Search historical smell references in European texts and artworks",
-        "developerName": "University of Basel",
+        "developerName": "RISE (University of Basel)",
         "websiteURL": "https://github.com/kintopp/odeuropa-eokg-mcp"
       },
       "source": {
@@ -36,14 +36,14 @@
       "displayName": "SKKG Collection",
       "description": "Search the collection of the Stiftung für Kunst, Kultur und Geschichte (SKKG, Winterthur): about 64,000 objects with German metadata, provenance, acquisitions, literature, exhibitions and images.",
       "author": {
-        "name": "University of Basel",
-        "url": "https://rise.unibas.ch/en/"
+        "name": "RISE (University of Basel)",
+        "url": "https://rise.unibas.ch"
       },
       "homepage": "https://github.com/kintopp/skkg-mcp",
       "interface": {
         "displayName": "SKKG Collection",
         "shortDescription": "Search the SKKG collection in Winterthur",
-        "developerName": "University of Basel",
+        "developerName": "RISE (University of Basel)",
         "websiteURL": "https://github.com/kintopp/skkg-mcp"
       },
       "source": {
@@ -63,14 +63,14 @@
       "displayName": "Rijksmuseum Iconclass",
       "description": "Search and browse the Iconclass art-subject classification: about 1.3 million notations in 13 languages, with keyword and semantic search and Rijksmuseum artwork counts, plus a research guidance skill.",
       "author": {
-        "name": "University of Basel",
-        "url": "https://rise.unibas.ch/en/"
+        "name": "RISE (University of Basel)",
+        "url": "https://rise.unibas.ch"
       },
       "homepage": "https://github.com/kintopp/rijksmuseum-iconclass-mcp",
       "interface": {
         "displayName": "Rijksmuseum Iconclass",
         "shortDescription": "Find Iconclass codes for art subjects, with Rijksmuseum artwork counts",
-        "developerName": "University of Basel",
+        "developerName": "RISE (University of Basel)",
         "websiteURL": "https://github.com/kintopp/rijksmuseum-iconclass-mcp"
       },
       "source": {
