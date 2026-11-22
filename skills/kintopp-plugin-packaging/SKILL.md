@@ -4,7 +4,7 @@ description: Package a remote MCP server and its skill as a plugin for Claude (c
 license: MIT
 metadata:
   version: "0.1.0"
-  last_updated: "2026-11-21"
+  last_updated: "2026-11-22"
 ---
 
 # Packaging an MCP server as a kintopp-plugins plugin

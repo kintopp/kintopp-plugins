@@ -32,7 +32,7 @@ and later), so that older layout is a leftover to delete.
   "displayName": "<Display Name>",
   "version": "<package.json version>",
   "description": "<one or two sentences; the same text as the marketplace entry>",
-  "author": { "name": "University of Basel", "url": "https://rise.unibas.ch/en/" },
+  "author": { "name": "RISE (University of Basel)", "url": "https://rise.unibas.ch" },
   "homepage": "https://github.com/kintopp/<repo>",
   "repository": "https://github.com/kintopp/<repo>",
   "license": "MIT",
@@ -48,7 +48,7 @@ and later), so that older layout is a leftover to delete.
   "name": "<plugin>",
   "version": "<package.json version>",
   "description": "<same text>",
-  "author": { "name": "University of Basel", "url": "https://rise.unibas.ch/en/" },
+  "author": { "name": "RISE (University of Basel)", "url": "https://rise.unibas.ch" },
   "homepage": "https://github.com/kintopp/<repo>",
   "repository": "https://github.com/kintopp/<repo>",
   "license": "MIT",
@@ -58,7 +58,7 @@ and later), so that older layout is a leftover to delete.
       "interface": {
         "displayName": "<Display Name>",
         "shortDescription": "<under ~70 characters>",
-        "developerName": "University of Basel",
+        "developerName": "RISE (University of Basel)",
         "category": "Productivity",
         "websiteURL": "https://github.com/kintopp/<repo>"
       }
@@ -155,7 +155,7 @@ uses "SKKG" for the skill, "SKKG Collection" for the plugin).
   "name": "<plugin>",
   "displayName": "<Display Name>",
   "description": "<same text>",
-  "author": { "name": "University of Basel", "url": "https://rise.unibas.ch/en/" },
+  "author": { "name": "RISE (University of Basel)", "url": "https://rise.unibas.ch" },
   "homepage": "https://github.com/kintopp/<repo>",
   "category": "research",
   "source": {
@@ -174,12 +174,12 @@ uses "SKKG" for the skill, "SKKG Collection" for the plugin).
   "name": "<plugin>",
   "displayName": "<Display Name>",
   "description": "<same text>",
-  "author": { "name": "University of Basel", "url": "https://rise.unibas.ch/en/" },
+  "author": { "name": "RISE (University of Basel)", "url": "https://rise.unibas.ch" },
   "homepage": "https://github.com/kintopp/<repo>",
   "interface": {
     "displayName": "<Display Name>",
     "shortDescription": "<same as plugin.json>",
-    "developerName": "University of Basel",
+    "developerName": "RISE (University of Basel)",
     "websiteURL": "https://github.com/kintopp/<repo>"
   },
   "source": {
