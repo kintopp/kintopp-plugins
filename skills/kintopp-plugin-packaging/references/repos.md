@@ -3,7 +3,7 @@
 A starting point for step 1 of the procedure, not a substitute for it. Check each line
 against the repo before acting on it.
 
-All the siblings except skkg-mcp build their committed `.skill` bundles with a
+All the siblings except skkg-mcp (which has no `.skill` bundle) build their committed `.skill` bundles with a
 deterministic `scripts/build-skill.mjs`: stored zip entries, timestamps taken from
 SKILL.md's `metadata.last_updated`, and SKILL.md's `metadata.version` synced from
 `package.json`. Extend that script; don't add a second generator. The rijksmuseum,
@@ -54,33 +54,30 @@ iconclass and globalise scripts have a `--check` mode; odeuropa checks drift in
   the same topic. Where they differ, this skill takes precedence.
 - Has a viewer.
 
-## skkg-mcp
+## skkg-mcp (done; upload zips only, as of 2026-11-23)
 
-- Plain ESM. Skill at `skill/skkg/` (SKILL.md only). There is **no `build:skill` script**
-  yet: add one in the style of the others, with tests.
-- `plugin/` is **gitignored** and holds a Codex-only experiment from 2026-11-08
-  (`plugin/skkg-collection/`, with `.codex-plugin/plugin.json`, key `skkg`, a `.mcp.json`
-  of type `streamable-http` (Claude needs `http`) with `headers: {}`, an icon, and its own
-  version 0.1.3). A `git-subdir` entry fetches nothing
-  from an ignored folder:
-  - Remove the ignore rule and replace the folder with the layout in `files.md`.
-  - Delete `.codex-plugin/` and `headers`.
-  - Use `package.json`'s version.
-  - Drop the personal email from `author`.
-  - The leftover `assets/icon.svg` (a plain museum glyph, not SKKG's logo) can be
-    reused as the icon, if the user agrees (see `files.md` § Icon).
-  - Ask the user about the plugin name (`skkg-collection` or something else) and the key.
-    The existing claude.ai connector is called "SKKG Sammlung".
-- The skill's `compatibility` line asks for a local database file (`SKKG_DB_PATH`). That
-  is false for the hosted connector, so reword it to cover both.
-- Watch patterns: `src/**`, `package.json`, `package-lock.json`. Adding `build:skill` to
-  `package.json` therefore redeploys.
-- The skill is a short pointer to `skkg_guide`, and the README tells users to zip the
-  folder themselves. Whether to add a `.skill` bundle is the user's call.
-- `test/CLAUDE.md` sets the test rules (mutation entries for new assertions); read it
-  before adding the drift checks.
-- `CLAUDE.md` says `plugin/` is gitignored with its own version, and its release steps
-  stamp the skill version by hand. Both change with this work.
+- `plugin/skkg/`, plugin name `skkg`, display name "SKKG Collection", connector key
+  `SKKG`, skill display name "SKKG". **Not in the marketplace:** the user removed its
+  entry on 2026-11-23. Users install it by uploading `plugin/skkg-claude.zip` or
+  `plugin/skkg-chatgpt.zip`, and the README points at those zips. Ask the user before
+  listing it again; the name `skkg` was published, so keep it.
+- `scripts/build-skill.mjs` (`npm run build:skill`) copies `skill/skkg/` into the
+  plugin, writes `package.json`'s version into both manifests, and packs the two zips
+  byte-reproducibly (stored entries, date from SKILL.md's `metadata.last_updated`).
+  `--check` only reports stale output. There is no `.skill` bundle.
+- `test/skill.test.js` holds the drift checks, the exact file list of each zip, the
+  57-character `shortDescription` limit, and a run of `--check`; each has an entry in
+  `test/mutations.mjs`. `test/CLAUDE.md` sets the test rules.
+- The skill is a short pointer to `skkg_guide`, one line per paragraph, with no notes
+  section. Its `compatibility` line covers both the hosted connector and a local
+  install.
+- Watch patterns: `src/**`, `package.json`, `package-lock.json`. The build script,
+  tests and `plugin/` are outside them, so changing those doesn't redeploy; a version
+  bump does.
+- The release steps in `CLAUDE.md` stamp SKILL.md's `version` and `last_updated` by
+  hand, then run `npm run build:skill`.
+- Uploading either zip has not been tested in the apps. A copy of `skkg` installed from
+  the marketplace earlier can make an upload test look successful.
 - Has a viewer.
 
 ## Not yet: books-as-data
