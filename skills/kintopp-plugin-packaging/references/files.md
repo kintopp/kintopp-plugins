@@ -57,7 +57,7 @@ and later), so that older layout is a leftover to delete.
     "com.openai": {
       "interface": {
         "displayName": "<Display Name>",
-        "shortDescription": "<under ~70 characters>",
+        "shortDescription": "<at most 57 characters>",
         "developerName": "RISE (University of Basel)",
         "category": "Productivity",
         "websiteURL": "https://github.com/kintopp/<repo>"
@@ -66,6 +66,10 @@ and later), so that older layout is a leftover to delete.
   }
 }
 ```
+
+ChatGPT cuts `shortDescription` off after 57 characters and shows the full text only on
+hover (verified 2026-11-23, personal plugin upload), so keep it to 57. OpenAI's docs
+allow only 30 for a public directory submission; an upload accepts longer text.
 
 The schema forbids extra top-level keys, so ChatGPT-only fields go under
 `extensions.com.openai`. Use `category: "Productivity"` unless a client has been seen to
