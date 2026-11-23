@@ -6,23 +6,6 @@
   "description": "Kintopp Plugins: MCP connectors and research skills for cultural heritage data",
   "plugins": [
     {
-      "name": "skkg",
-      "displayName": "SKKG Collection",
-      "description": "Search the collection of the Stiftung für Kunst, Kultur und Geschichte (SKKG, Winterthur): about 64,000 objects with German metadata, provenance, acquisitions, literature, exhibitions and images.",
-      "author": {
-        "name": "RISE (University of Basel)",
-        "url": "https://rise.unibas.ch"
-      },
-      "homepage": "https://github.com/kintopp/skkg-mcp",
-      "category": "research",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/kintopp/skkg-mcp.git",
-        "path": "plugin/skkg",
-        "ref": "main"
-      }
-    },
-    {
       "name": "rijksmuseum-iconclass",
       "displayName": "Rijksmuseum Iconclass",
       "description": "Search and browse the Iconclass art-subject classification: about 1.3 million notations in 13 languages, with keyword and semantic search and Rijksmuseum artwork counts, plus a research guidance skill.",
