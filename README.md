@@ -6,7 +6,6 @@ own public repository; this repository only lists them.
 
 | Plugin | Display name | Source |
 |---|---|---|
-| `rijksmuseum-iconclass` | Rijksmuseum Iconclass | [kintopp/rijksmuseum-iconclass-mcp](https://github.com/kintopp/rijksmuseum-iconclass-mcp/tree/main/plugin/rijksmuseum-iconclass) |
 
 ## Files
 
@@ -21,8 +20,7 @@ Keep the two files in step: same marketplace `name`, same plugin names and sourc
 
 - **claude.ai or Claude Desktop:** Customize → Plugins → Add → Add marketplace, enter `kintopp/kintopp-plugins`, then add each plugin
   and connect its connector on the plugin's Connectors tab. This works on free accounts too.
-- **Claude Code:** `claude plugin marketplace add kintopp/kintopp-plugins`, then
-  `claude plugin install rijksmuseum-iconclass@kintopp-plugins`.
+- **Claude Code:** `claude plugin marketplace add kintopp/kintopp-plugins`.
 - **ChatGPT desktop app:** Plugins → Add plugin marketplace, enter `kintopp/kintopp-plugins` as the Source and leave
   Git ref and Sparse paths empty. Then install from the plugin browser. This works on free accounts too, but the plugin runs only in Codex mode,
   not in ordinary ChatGPT chats. ChatGPT on the web (chatgpt.com) can't add a
