@@ -1,6 +1,6 @@
 ---
 name: kintopp-plugin-packaging
-description: Package a remote MCP server and its skill as a plugin for Claude (claude.ai, Claude Desktop, Claude Code) and ChatGPT (desktop app, Codex), and list it in the public kintopp/kintopp-plugins marketplace. Use when working in one of the sibling MCP server repos (rijksmuseum-mcp-plus, rijksmuseum-iconclass-mcp, globalise-mcp, skkg-mcp, odeuropa-eokg-mcp) and the task is to add a plugin/ folder, write .claude-plugin/plugin.json, plugin.json, .mcp.json or mcp.json, add a marketplace entry, sync the plugin's skill copy and version, raise a plugin version so installs update, explain how users install the plugin on either platform and its limits (free accounts, Codex mode only, chatgpt.com), or debug a plugin that installs but shows no skill or connector.
+description: Package a remote MCP server, with or without a skill, as a plugin for Claude (claude.ai, Claude Desktop, Claude Code) and ChatGPT (desktop app, Codex), and list it in the public kintopp/kintopp-plugins marketplace. Use when working in one of the sibling MCP server repos (rijksmuseum-mcp-plus, rijksmuseum-iconclass-mcp, globalise-mcp, skkg-mcp, odeuropa-eokg-mcp) and the task is to add a plugin/ folder, write .claude-plugin/plugin.json, plugin.json, .mcp.json or mcp.json, add a marketplace entry, sync the plugin's skill copy and version, raise a plugin version so installs update, explain how users install the plugin on either platform and its limits (free accounts, Codex mode only, chatgpt.com), or debug a plugin that installs but shows no skill or connector.
 license: MIT
 metadata:
   version: "0.1.0"
@@ -9,7 +9,8 @@ metadata:
 
 # Packaging an MCP server as a kintopp-plugins plugin
 
-A plugin here is a **remote MCP connector plus its research skill**, installed together.
+A plugin here is a **remote MCP connector**, usually with a research skill installed
+alongside it.
 Each plugin lives in its own public server repo, under `plugin/<name>/`. The marketplace
 repo `kintopp/kintopp-plugins` holds only two catalog files that point at those
 folders with `git-subdir` entries. `plugin/odeuropa-eokg/` in `kintopp/odeuropa-eokg-mcp`
@@ -30,8 +31,9 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
 
 1. **Inspect the repo; don't trust notes.** Versions, paths and watch patterns change.
    Find out:
-   - where the hand-edited skill folder is (`skill/<name>/`, or deeper in a monorepo);
-   - how it is built (`npm run build:skill`, and whether `--check` exists);
+   - any hand-edited skill folder (`skill/<name>/`, or deeper in a monorepo), to offer
+     in step 2;
+   - how the skill is built (`npm run build:skill`, and whether `--check` exists);
    - how tests run and where the skill tests live;
    - the hosted URL (README, `docs/deploy.md`);
    - Railway's `watchPatterns` in `.railway/railway.ts`, which decide what a push to
@@ -41,7 +43,12 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
      which the new checks and the build must follow.
 
    `references/repos.md` has what was true on 2026-11-21, as a starting point.
-2. **Agree the names with the user** before writing files:
+2. **Agree the names and metadata with the user** before writing files:
+   - **Skill (optional):** ask where the skill to bundle with the connector is, offering
+     any folder found in step 1, or whether there is none. It must be inside the server
+     repo, because the build copies it from there; if it isn't, ask whether to move it.
+     Without a skill, the plugin is the connector alone: skip everything this procedure
+     marks "if there is a skill".
    - **Plugin name:** kebab-case, unique in the marketplace, and permanent: users install
      and enable the plugin by it, so a rename breaks their installs (`platforms.md` §
      Updates). `claude plugin validate` rejects a name that starts with `claude-`,
@@ -52,8 +59,15 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
      ChatGPT capitalises only its first letter, and spaces are not allowed, so a form like
      `Odeuropa-EOKG` reads the same on both. Renaming it later makes every user reconnect.
    - **Author and website:** keep them as in the other entries.
+   - **Repository:** the URL for `repository`, by default the server repo
+     (`https://github.com/kintopp/<repo>`).
+   - **License:** an SPDX identifier such as `MIT`. Propose the one in the repo's
+     `LICENSE` or `package.json`.
+   - **Keywords:** a handful of plain subject words. Propose some from the README or a
+     leftover manifest.
    - **Description:** one or two sentences on what the user gets (the collection, the
-     period, and "with a research guidance skill" only if the skill gives real guidance).
+     period, and "with a research guidance skill" only if there is a skill and it gives
+     real guidance).
      The same text goes in both manifests and both catalog entries.
    - **Icon (optional):** whether the plugin gets one, and which image. See
      `references/files.md` § Icon. Don't use an institution's logo or branding without
@@ -61,11 +75,11 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
 3. **Write the plugin folder** from `references/files.md`:
    - two manifests;
    - two MCP configs with the same key and URL;
-   - `skills/<skill-name>/`, a real copy of the skill;
-   - the skill's `agents/openai.yaml`.
-4. **Make the build own the copy.** Extend the repo's skill build, or add one if there is
-   none, so that one command does two things:
-   - (a) copies the whole skill folder recursively into
+   - if there is a skill, `skills/<skill-name>/`, a real copy of it, and its
+     `agents/openai.yaml`.
+4. **Make the build own the generated files.** Extend the repo's skill build, or add one
+   if there is none, so that one command:
+   - (a) if there is a skill, copies the whole skill folder recursively into
      `plugin/<name>/skills/<skill-name>/`;
    - (b) writes `package.json`'s version into both manifests.
 
@@ -75,9 +89,9 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
    Building a `.skill` bundle is not part of this task where the repo has none; ask the
    user. If the build also starts stamping SKILL.md's version, update the release steps
    that told a person to do it.
-5. **Fix the skill where the plugin route makes it wrong.** A `compatibility` line that
-   asks for a local database or stdio is false for a hosted connector. Fix that in the
-   source skill.
+5. **If there is a skill, fix it where the plugin route makes it wrong.** A
+   `compatibility` line that asks for a local database or stdio is false for a hosted
+   connector. Fix that in the source skill.
    - **No hard-wrapped Markdown** in the skill folder: put each paragraph and each list
      item on one line. ChatGPT's skill page keeps line breaks inside a paragraph, so a
      wrapped SKILL.md shows as broken lines. Unwrap an existing skill, and add a test

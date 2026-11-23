@@ -58,7 +58,10 @@ claude plugin details <plugin>@<marketplace>      # one skill + the <Key> server
 ```
 
 Rung 4 is a live session: ask the client to list its skills without using tools.
-`<plugin>:<skill>` must appear. Then remove the test installs and any scratch marketplace
+`<plugin>:<skill>` must appear. A plugin without a skill has no such proof (see the
+confound below): rely on `claude plugin details` listing the `<Key>` server under the
+plugin and on the Codex cache listing, and check that no standalone connector uses the
+same key. Then remove the test installs and any scratch marketplace
 (`codex plugin remove`, `claude plugin uninstall`, `… marketplace remove`). Don't remove
 the user's registered `kintopp-plugins` marketplace.
 

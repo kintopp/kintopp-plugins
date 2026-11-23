@@ -14,7 +14,7 @@ plugin/<plugin>/
 ├── .mcp.json                      Claude MCP config, "type": "http"
 ├── mcp.json                       Agent Plugins MCP config, "type": "streamable-http"
 ├── assets/icon.svg                optional icon, hand-placed (see § Icon)
-└── skills/<skill>/                generated copy of the source skill folder
+└── skills/<skill>/                if there is a skill: generated copy of its source folder
     ├── SKILL.md
     ├── references/…
     └── agents/openai.yaml         (lives in the source skill, so it is copied too)
@@ -157,6 +157,9 @@ uses "SKKG" for the skill, "SKKG Collection" for the plugin).
   "description": "<same text>",
   "author": { "name": "RISE (University of Basel)", "url": "https://rise.unibas.ch" },
   "homepage": "https://github.com/kintopp/<repo>",
+  "repository": "<repository URL>",
+  "license": "<SPDX id>",
+  "keywords": ["…"],
   "category": "research",
   "source": {
     "source": "git-subdir",
@@ -195,16 +198,24 @@ uses "SKKG" for the skill, "SKKG Collection" for the plugin).
 
 The `path` is relative to the server repo's root. The two catalogs spell it differently
 (`plugin/<x>` and `./plugin/<x>`) because that is how the working Odeuropa entries were
-written and verified; keep that spelling. `keywords` are a handful of plain subject words
-(a leftover manifest's list is fine to reuse). The fields `displayName`, `author`,
-`homepage` and `interface` are what ChatGPT shows before install, so fill them in.
+written and verified; keep that spelling. Use the `repository`, `license` and `keywords`
+agreed in step 2, the same in both manifests and in Claude's entry.
+
+Before install, both platforms show only the entry's own fields for a plugin hosted in
+another repo. ChatGPT shows `displayName`, `author`, `homepage` and `interface` (verified
+2026-11-21). Claude Code shows `displayName`, `description`, `author`, `homepage`,
+`repository`, `license` and `keywords` (docs, 2026-11-23); whether claude.ai shows the
+last three is untested. So fill them all in. The ChatGPT entry omits `repository`,
+`license` and `keywords`: they are untested there, and an unknown field may fail silently.
 
 Then add a row to the README table:
 `| \`<plugin>\` | <Display Name> | [kintopp/<repo>](https://github.com/kintopp/<repo>/tree/main/<path>) |`.
 
 ## Drift checks to add to the server repo's tests
 
-These mirror `test/skill.test.js` in odeuropa-eokg-mcp:
+These mirror `test/skill.test.js` in odeuropa-eokg-mcp. Without a skill, drop check 1,
+the `openai.yaml` half of check 5, and check 6, and check instead that the plugin folder
+has no `skills/`:
 
 1. `plugin/<plugin>/skills/<skill>/` has exactly the files and contents of the source
    skill folder. Walk both trees; don't use a fixed list of files.
