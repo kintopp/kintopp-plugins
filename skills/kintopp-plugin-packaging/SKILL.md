@@ -4,7 +4,7 @@ description: Package a remote MCP server and its skill as a plugin for Claude (c
 license: MIT
 metadata:
   version: "0.1.0"
-  last_updated: "2026-11-22"
+  last_updated: "2026-11-23"
 ---
 
 # Packaging an MCP server as a kintopp-plugins plugin
@@ -42,7 +42,11 @@ symlink you loaded it through). Its `README.md` lists the plugins and the instal
 
    `references/repos.md` has what was true on 2026-11-21, as a starting point.
 2. **Agree the names with the user** before writing files:
-   - **Plugin name:** kebab-case, unique in the marketplace.
+   - **Plugin name:** kebab-case, unique in the marketplace, and permanent: users install
+     and enable the plugin by it, so a rename breaks their installs (`platforms.md` §
+     Updates). `claude plugin validate` rejects a name that starts with `claude-`,
+     `anthropic-` or `cc-plugin-`, and warns when `claude` or `anthropic` is a whole word
+     in it. Change `displayName`, not `name`, to relabel.
    - **Display name.**
    - **Connector key:** this is the connector's label. Claude shows it as written,
      ChatGPT capitalises only its first letter, and spaces are not allowed, so a form like

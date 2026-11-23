@@ -49,14 +49,22 @@ two platforms show the same label. Don't rename either one alone.
 - Install caches are keyed by plugin version, on both platforms (verified for Codex:
   `~/.codex/plugins/cache/<marketplace>/<plugin>/<version>/`). Without a version bump,
   existing installs keep the old files.
-- Claude: auto-update is off by default for user-added marketplaces. Users can choose
-  **Check for updates** on the marketplace, or turn on automatic sync (docs). Whether
-  either picks up a bump without a reinstall is an open test.
+- Claude Code: background auto-update is off for a user-added marketplace until the user
+  turns it on under **Marketplaces** in `/plugin`; the catalog has no field for it.
+  Without it, users run `claude plugin marketplace update kintopp-plugins` or
+  `claude plugin update <plugin>@kintopp-plugins` (docs, 2026-11-23).
+- claude.ai and Desktop: users choose **Check for updates** on the marketplace, or turn on
+  **Sync automatically**, which is offered for a marketplace added from github.com (docs,
+  2026-11-23). Whether either picks up a bump without a reinstall is an open test.
 - Codex and ChatGPT desktop: `codex plugin marketplace upgrade` refreshes the snapshot.
   The ChatGPT desktop app's own installs were not visible to the Codex CLI on 2026-11-21,
   so update those inside the app (inferred). An August note that the two "share one
   config" is out of date.
 - A renamed connector key counts as a new connector: users must connect it again.
+- A renamed plugin `name` breaks existing installs. Claude's catalog takes a top-level
+  `renames` map (`"old-name": "new-name"`, or `null` for a removed plugin) that migrates
+  Claude Code users; keep its entries once added (docs, 2026-11-23). No equivalent is
+  known for the ChatGPT catalog, so treat plugin names as permanent.
 - Changes to the marketplace entry alone (labels, description) show after a marketplace
   refresh, with no version bump (verified on Codex 2026-11-21).
 
@@ -70,6 +78,7 @@ two platforms show the same label. Don't rename either one alone.
 - **ChatGPT Business/Enterprise workspace import** reads public or private GitHub
   marketplaces and syncs daily. Plugins that declare MCP servers "may get a Desktop only
   label".
-- Claude allows up to 25 user-added marketplaces per account. Claude Code refuses
-  marketplace names that imitate official Anthropic ones.
+- Claude allows up to 25 user-added marketplaces per account, and a plugin of up to 5,000
+  files and 200 MB on claude.ai. Claude Code refuses marketplace names that imitate
+  official Anthropic ones.
 - Publishing in Anthropic's or OpenAI's public directory involves a review.

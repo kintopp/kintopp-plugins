@@ -12,6 +12,9 @@ claude plugin validate plugin/<plugin>          # Claude manifest + .mcp.json
 claude plugin validate <kintopp-plugins clone>  # Claude's catalog only (.claude-plugin/marketplace.json)
 ```
 
+Add `--strict` to either command to fail on warnings too, such as an unknown field or a
+name that reads as Anthropic's.
+
 `.agents/plugins/marketplace.json` has no validator here: check it as valid JSON with the
 same plugin names and sources as Claude's catalog, then let the Codex install ladder below
 prove it. Check the Agent Plugins schemas, which the validator above doesn't cover. Fetch each
