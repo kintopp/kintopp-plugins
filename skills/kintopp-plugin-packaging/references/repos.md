@@ -12,7 +12,8 @@ iconclass and globalise scripts have a `--check` mode; odeuropa checks drift in
 
 ## odeuropa-eokg-mcp (done; the reference)
 
-- `plugin/odeuropa-eokg/`, connector key `Odeuropa-EOKG`.
+- `plugin/odeuropa-eokg/`, connector key `Odeuropa-EOKG`. **Not in the marketplace:** the
+  user removed its entry on 2026-11-23. Ask the user before listing it again.
 - `build:skill` writes the plugin's skill copy and both manifest versions.
   `test/skill.test.js` holds the drift checks.
 - Pushes that touch `src/`, `package.json` or `package-lock.json` redeploy Railway;
@@ -20,6 +21,8 @@ iconclass and globalise scripts have a `--check` mode; odeuropa checks drift in
 
 ## rijksmuseum-mcp-plus
 
+- Plugin name `rijksmuseum`. **Not in the marketplace:** it was listed, then unlisted
+  on 2026-11-22. Ask the user before listing it again; the name was published, so keep it.
 - TypeScript, built to `dist/`. Skill at `skill/rijksmuseum-mcp-plus/` (with `references/`).
   `build:skill` has `--check`.
 - The repo also has `.agents/skills/rijksmuseum-mcp-plus/` and `skills-lock.json`. Find out
