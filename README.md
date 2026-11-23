@@ -4,8 +4,7 @@ A plugin marketplace for Claude (claude.ai, Claude Desktop, Claude Code) and Cha
 Each plugin bundles a remote MCP connector with its research skill. The plugin files live in each project's
 own public repository; this repository only lists them.
 
-| Plugin | Display name | Source |
-|---|---|---|
+No plugins are listed at the moment.
 
 ## Files
 
