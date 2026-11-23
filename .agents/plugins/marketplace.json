@@ -5,33 +5,6 @@
   },
   "plugins": [
     {
-      "name": "odeuropa-eokg",
-      "displayName": "Odeuropa EOKG",
-      "description": "Search the European Olfactory Knowledge Graph (Odeuropa): about 2.4 million smell references from European texts and artworks, mostly 1600–1920, with a research guidance skill.",
-      "author": {
-        "name": "RISE (University of Basel)",
-        "url": "https://rise.unibas.ch"
-      },
-      "homepage": "https://github.com/kintopp/odeuropa-eokg-mcp",
-      "interface": {
-        "displayName": "Odeuropa EOKG",
-        "shortDescription": "Search historical smell references in European texts and artworks",
-        "developerName": "RISE (University of Basel)",
-        "websiteURL": "https://github.com/kintopp/odeuropa-eokg-mcp"
-      },
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/kintopp/odeuropa-eokg-mcp.git",
-        "path": "./plugin/odeuropa-eokg",
-        "ref": "main"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
       "name": "skkg",
       "displayName": "SKKG Collection",
       "description": "Search the collection of the Stiftung für Kunst, Kultur und Geschichte (SKKG, Winterthur): about 64,000 objects with German metadata, provenance, acquisitions, literature, exhibitions and images.",
