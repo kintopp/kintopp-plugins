@@ -28,11 +28,11 @@ iconclass and globalise scripts have a `--check` mode; odeuropa checks drift in
   `tsconfig.json`. A root `plugin/` is outside them.
 - Has a viewer, so the README keeps the direct routes for it (see `platforms.md`).
 
-## rijksmuseum-iconclass-mcp
+## rijksmuseum-iconclass-mcp (done; upload zips only, as of 2026-11-23)
 
-- TypeScript. Skill at `skill/iconclass-mcp/` (SKILL.md only). The skill name differs from
+- TypeScript. Skill at `skill/iconclass/` (SKILL.md and `agents/openai.yaml`; renamed from `iconclass-mcp` on 2026-11-23, since Claude labels a skill by its `name`). The skill name differs from
   the repo name, so pick the plugin name deliberately.
-- The bundle copy is named `.skill.zip`, not `.zip`.
+- The build writes `skill/iconclass.skill` and `skill/iconclass.zip`, which are also the release assets, plus the upload zips `plugin/rijksmuseum-iconclass-{claude,chatgpt}.zip`.
 - Watch patterns: `src/**`, `package.json`, `package-lock.json`, `tsconfig.json`.
 - CI runs on every push and the push to `main` deploys.
 
