@@ -14,6 +14,17 @@ from vendor documentation and untested. Re-check before you rely on any of them.
 | chatgpt.com (web) | none | It can't add a marketplace; it points to the desktop app. A free account has no Codex mode at all | verified 2026-11-21 |
 | Codex CLI | `codex plugin marketplace add kintopp/kintopp-plugins`, then `codex plugin add <plugin>@kintopp-plugins` | Skill and server | verified 2026-11-21, codex-cli 0.167.0 |
 
+## Install routes for an upload zip
+
+| Client | How | Grade |
+|---|---|---|
+| claude.ai and Claude Desktop | Customize → Plugins → Add → Upload plugin, choose the zip; then add the connector on the plugin's Connectors tab, since adding a plugin adds no connector | verified 2026-11-23; menu path and Connectors step also in Anthropic's docs |
+| ChatGPT desktop app | Settings → Plugins → Add, choose the zip | verified 2026-11-23 (user) |
+| chatgpt.com (web) | OpenAI's help documents a web upload "when the upload option is available"; it may be limited to the desktop app, so READMEs name only the desktop app | untested; docs only |
+
+Upload takes a file only, never a URL, so a README links the zip for download and then
+names the upload path.
+
 So on ChatGPT, plugins are a desktop and Codex feature. For ordinary ChatGPT chat, the
 route is a **custom connector** (Settings → Apps → developer mode, paste the server URL).
 That is a different mechanism: it depends on the plan and gives the tools without the skill.
@@ -25,9 +36,11 @@ That is a different mechanism: it depends on the plan and gives the tools withou
   routes as the way to get it: the remote connector URL, a local stdio install, or a
   desktop extension (`.mcpb`). Offer the plugin as the way to get connector and skill
   together.
-- **Free claude.ai accounts** allow one custom connector. It is untested whether a
-  plugin's connector counts toward that limit, so don't promise that several plugins can
-  be installed side by side on a free account.
+- **Free claude.ai accounts** allow one custom connector, and a plugin's connector counts
+  as one. To add another, the user must **remove** the existing custom connector; disabling
+  it is not enough. Plugins from Anthropic's curated directory don't count toward the
+  limit, but ours aren't listed there. So a free account holds one of our plugins at a time,
+  and the README should say so (user report, 2026-11-25).
 - Say which half each route delivers: a connector alone has no skill, and an uploaded
   `.skill` alone has no tools.
 

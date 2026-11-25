@@ -97,7 +97,7 @@ build.
 
   `brandColor` (a hex colour) is optional. These keys are documented, and OpenAI's own
   plugins use them. Whether ChatGPT shows the logo for a plugin from this marketplace,
-  before or after install, is an open test (`open-tests.md` #6). For a plugin hosted in
+  before or after install, is an open test (`open-tests.md` #5). For a plugin hosted in
   another repo, ChatGPT shows only marketplace-entry fields before install. The docs show
   no icon field for a marketplace entry, so expect the icon only after install.
 - **Claude:** `"icon": "./assets/icon.svg"` in `.claude-plugin/plugin.json`. The docs say
