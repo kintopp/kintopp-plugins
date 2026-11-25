@@ -1,5 +1,7 @@
 ## Cultural Heritage MCP Servers and Research Scenarios 
 
+The MCP servers below were developed by the [Research and Infrastructure Support](https://rise.unibas.ch/en/) (RISE) group at the University of Basel. We are particularly interested in exploring the research opportunities, methodological risks, and technical challenges posed by retrieving and analysing data with LLMs. If you would like to collaborate with us in this area, please [get in touch](mailto:rise@unibas.ch).
+
 ### Rijksmuseum MCP Plus
 
 [https://github.com/kintopp/rijksmuseum-mcp-plus](https://github.com/kintopp/rijksmuseum-mcp-plus)
@@ -10,13 +12,13 @@ Unofficial MCP server for the Rijksmuseum collections with enhanced metadata, se
 
 [https://github.com/kintopp/rijksmuseum-iconclass-mcp](https://github.com/kintopp/rijksmuseum-iconclass-mcp)
 
-Iconclass MCP server for the Rijksmuseum with support for semantic search and ArtResearch consortium queries. *[Research Scenarios](https://github.com/kintopp/rijksmuseum-iconclass-mcp/blob/main/docs/example-prompts.md).*
+Iconclass MCP server for the Rijksmuseum with support for semantic search and ArtResearch consortium queries. The server provides access to over 1.3 million open-access Iconclass notations — all of the c. 39,000 base concepts and c. 1.3 million key-expanded variants that add modifiers like posture, context, or symbolism. *[Research Scenarios](https://github.com/kintopp/rijksmuseum-iconclass-mcp/blob/main/docs/example-prompts.md).*
 
 ### Globalise MCP
 
 [https://github.com/kintopp/globalise-mcp](https://github.com/kintopp/globalise-mcp)
 
-Unofficial MCP Server for the GLOBALISE project's Dutch East India Company (VOC) corpus. *[Research Scenarios](https://github.com/kintopp/globalise-mcp/blob/main/globalise-mcp-server/docs/research-scenarios.md).*
+Unofficial MCP Server for the [Globalise](https://globalise.huygens.knaw.nl) project's Dutch East India Company (VOC) corpus. The collection focuses on the [Overgekomen Brieven en Papieren](https://www.nationaalarchief.nl/onderzoeken/archief/1.04.02) which were sent by the VOC in Batavia to the Dutch Republic in the 17th-18th centuries and are now held by the [Dutch National Archives](https://www.nationaalarchief.nl/). *[Research Scenarios](https://github.com/kintopp/globalise-mcp/blob/main/globalise-mcp-server/docs/research-scenarios.md).*
 
 ### Odeuropa EOKG MCP
 
