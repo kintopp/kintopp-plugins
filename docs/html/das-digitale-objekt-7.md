@@ -26,7 +26,7 @@ Unofficial MCP Server for the [Globalise](https://globalise.huygens.knaw.nl) pro
 
 An MCP server for the European Olfactory Knowledge Graph (EOKG): c. 2.4M smell references machine-extracted by the [Odeuropa](https://odeuropa.eu) project from European texts (English, French, Italian, Slovenian, German, Dutch) and c. 44,000 artworks, mostly 1600–1920. *[Research Scenarios](https://claude.ai/artifact/SzxMnGF8HC1yFhj1sqqDbW).*
 
-### Books as Data
+### Books as Data MCP
 
 [https://github.com/kintopp/books-as-data](https://github.com/kintopp/books-as-data)
 
