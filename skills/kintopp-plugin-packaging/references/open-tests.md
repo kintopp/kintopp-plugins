@@ -26,12 +26,9 @@ Does a version bump reach an installed plugin?
 
 ## 3. Viewer through a plugin connector
 
-For servers with an MCP App viewer, does the viewer render when the connector comes from
-a plugin?
-
-- **Where:** in claude.ai, Claude Desktop, and ChatGPT desktop in Codex mode.
-- **Until then:** the README offers the direct remote connector, local stdio or `.mcpb`
-  for the viewer.
+Done: the viewer renders from a plugin connector on free accounts in claude.ai, Claude
+Desktop and the ChatGPT desktop app's Work and Codex modes (verified 2026-11-26,
+globalise). Re-test only if a client update seems to break it.
 
 ## 4. ChatGPT custom connector in Codex mode
 

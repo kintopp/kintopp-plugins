@@ -18,7 +18,7 @@ from vendor documentation and untested. Re-check before you rely on any of them.
 
 | Client | How | Grade |
 |---|---|---|
-| claude.ai and Claude Desktop | Customize → Plugins → Add → Upload plugin, choose the zip; then add the connector on the plugin's Connectors tab, since adding a plugin adds no connector | verified 2026-11-23; menu path and Connectors step also in Anthropic's docs |
+| claude.ai and Claude Desktop | Settings → Plugins → Browse plugins (scroll to the bottom) → Add → Upload plugin, choose the zip (path confirmed by user 2026-11-26); then add the connector on the plugin's Connectors tab, since adding a plugin adds no connector | verified 2026-11-23; menu path and Connectors step also in Anthropic's docs |
 | ChatGPT desktop app | Settings → Plugins → Add, choose the zip | verified 2026-11-23 (user) |
 | chatgpt.com (web) | OpenAI's help documents a web upload "when the upload option is available"; it may be limited to the desktop app, so READMEs name only the desktop app | untested; docs only |
 
@@ -31,11 +31,13 @@ That is a different mechanism: it depends on the plan and gives the tools withou
 
 ### What a README should say about each route
 
-- **Viewers (MCP Apps).** It is untested whether a viewer renders when the connector
-  comes from a plugin. For servers whose viewer matters, the README keeps the direct
-  routes as the way to get it: the remote connector URL, a local stdio install, or a
-  desktop extension (`.mcpb`). Offer the plugin as the way to get connector and skill
-  together.
+- **Viewers (MCP Apps).** A viewer renders from a plugin connector on **free** accounts:
+  in claude.ai and Claude Desktop, and in the ChatGPT desktop app in Work and Codex modes
+  but not Chat (verified 2026-11-26, globalise upload zips, user). A README needs no
+  viewer fallback for the plugin route.
+- **chatgpt.com custom connectors** are closed to free accounts. OpenAI's help gives full
+  MCP to Business and Enterprise/Edu and read/fetch only to Pro (docs, 2026-11-26), so a
+  README must not send ChatGPT free users to that route as a fallback.
 - **Free claude.ai accounts** allow one custom connector, and a plugin's connector counts
   as one. To add another, the user must **remove** the existing custom connector; disabling
   it is not enough. Plugins from Anthropic's curated directory don't count toward the
